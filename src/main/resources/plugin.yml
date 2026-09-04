@@ -1,0 +1,24 @@
+name: PiratesUnsolved
+version: 1.1.0
+main: com.piratesgaming.unsolved.PiratesUnsolved
+api-version: '1.21'
+author: PiratesGaming
+description: Pirates Unsolved SMP Season 1
+softdepend: [LuckPerms]
+commands:
+  unsolved:
+    description: Pirates Unsolved SMP admin/player commands
+    usage: /us <command>
+    aliases: [us]
+  kills:
+    description: Show your kills
+  lives:
+    description: Show and manage your lives
+  register:
+    description: Register your Unsolved SMP account
+  login:
+    description: Login to your Unsolved SMP account
+permissions:
+  unsolved.admin:
+    description: Full access to Pirates Unsolved admin commands
+    default: op

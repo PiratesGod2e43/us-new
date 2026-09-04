@@ -1,0 +1,6 @@
+package com.piratesgaming.unsolved;
+import org.bukkit.ChatColor;import org.bukkit.command.*;import org.bukkit.entity.Player;
+public class AuthCommand implements CommandExecutor{
+ private final PiratesUnsolved p; public AuthCommand(PiratesUnsolved p){this.p=p;}
+ public boolean onCommand(CommandSender s,Command c,String l,String[] a){if(!(s instanceof Player q))return true;if(!p.getConfig().getBoolean("login-security",false)){q.sendMessage(ChatColor.YELLOW+"Login security is disabled.");return true;}if(l.equalsIgnoreCase("register")||c.getName().equalsIgnoreCase("register")){if(a.length<2){q.sendMessage(ChatColor.RED+"Usage: /register <password> <password>");return true;}if(p.getConfig().getBoolean("registered."+q.getUniqueId(),false)){q.sendMessage(ChatColor.RED+"You are already registered. Use /login <password>.");return true;}if(!a[0].equals(a[1])){q.sendMessage(ChatColor.RED+"Passwords do not match.");return true;}if(a[0].length()<4){q.sendMessage(ChatColor.RED+"Password must be at least 4 characters.");return true;}p.register(q,a[0]);return true;}if(a.length<1){q.sendMessage(ChatColor.RED+"Usage: /login <password>");return true;}if(p.login(q,a[0]))return true;q.sendMessage(ChatColor.RED+"Incorrect password.");return true;}
+}

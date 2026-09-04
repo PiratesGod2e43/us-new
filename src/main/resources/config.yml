@@ -1,0 +1,28 @@
+season-started: false
+login-security: true
+ip-security: true
+same-ip: true
+anticheat: true
+kills-rank: false
+trial-chambers: true
+mace: true
+whitelist: false
+lives-default: 10
+zero-lives-ban: true
+max-team-members: 2
+max-alliances: 1
+ban-item-days: 2
+spin:
+  enabled: true
+  steps: 30
+  ticks-per-step: 2
+rank-order: []
+ban-items: {}
+registered: {}
+ip-hashes: {}
+sameip-whitelist: []
+whitelist-players: []
+kills: {}
+lives: {}
+eliminated: {}
+rank-index: {}
